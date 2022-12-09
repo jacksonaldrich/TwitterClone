@@ -41,6 +41,7 @@ the following tasks are worth 3 points each
 
 1. Created a nicely themed webpage with HTML/CSS.
 1. Added a json endpoint for my messages route that returns the list of messages in json format instead of HTML format.
+1. Allow changing the password after creating an account. You must have a password reset form that forces the user to type in their old password and a new password twice.
 
 **Optional Tasks pt. 2:**
 the following tasks are worth 6 points each
@@ -54,6 +55,5 @@ the following have different point values assigned
 
 **Total Grade:**
 1. Required Tasks: 25
-2. Optional Tasks: 12.5
-### Total = 37.5
-
+2. Optional Tasks: 15.5
+### Total = 40.5
