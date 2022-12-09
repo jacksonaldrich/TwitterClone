@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>tweetter</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/twitterlogo.png')}}">
+    </head>
+        <body>
+            <h1>tweeter<img src = "{{ url_for('static', filename = 'img/twitterlogo.png') }}" class="center"></h1>
+            <ol>
+                <li><a href='/'>home</a></li>
+                {% if username %}
+                <li><a href='/logout'>logout</a></li>
+                <li><a href='/create_message'>create message</a></li>
+                <li><a href='/search_message'>search message</a></li>
+
+                {% else %}
+                <li><a href='/login'>login</a></li>
+                <li><a href='/create_user'>create user</a></li>
+                {% endif %}
+                
+            </ol>
+
+            {% block content %} 
+            {% endblock %}
+    </body>
+</html>

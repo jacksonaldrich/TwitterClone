@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>write a message!</h2>
+
+{% if not good_message %}
+<form action='/create_message' method="POST">
+    <table class=createmessage>
+        <tr>
+            <td>type your message here</td>
+            <td><input type=text name=message required="required" size="100" placeholder="type message here"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type=submit value='create message'></td>
+        </tr>
+    </table>
+</form>
+{% else %}
+<p style="color: green; text-align: center;">SUCCESS: message created</p>
+<form action='/create_message' method="POST">
+    <table class=createmessage>
+        <tr>
+            <td>type your message here</td>
+            <td><input type=text name=message required="required" size="100"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type=submit value='create message'></td>
+        </tr>
+    </table>
+</form>
+{% endif %}
+{% endblock %}

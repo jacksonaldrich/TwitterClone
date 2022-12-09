@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>home</h2>
+<table class = center>
+    <tr><th>sender (age)</th><th>message</th><th>posted at</th></tr>
+    {% for message in messages %}
+    <tr>
+        <td>{{message['username']}} (age {{message['age']}})</td>
+        <td>{{message['message']}}</td>
+        <td>{{message['posted at']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<table class = json_table>
+    <tr>
+        <th class = th_json>json endpoint</th>
+            <td><a class="json" href= "/home.json">json</a></td>
+    </tr>
+</table>
+{% endblock %}

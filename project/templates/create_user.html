@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{# add the retype password FIXME into the python file 
+#}
+{% block content %}
+<h2>create user</h2>
+
+{% if bad_username %}
+<p style="color: red; text-align: center;">ERROR: username already exists</p>
+{% endif %}
+
+{% if bad_password %}
+<p style="color: red; text-align: center;">ERROR: passwords do not match</p>
+{% endif %}
+
+{% if not created_user %}
+<form action='/create_user' method="POST">
+    <table class=createuser>
+        <tr>
+        <td>username</td>
+        <td><input type=text name=username placeholder="username" required="required"></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type=password name=password placeholder="password" required="required"></td>
+        </tr>
+        <tr>
+            <td>retype password</td>
+            <td><input type=password name=password2 placeholder="password" required="required"></td>
+        </tr>
+        <tr>
+            <td>age</td>
+            <td><input type=text name=age placeholder="age" required="required"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type=submit value='create user'></td>
+        </tr>
+    </table>
+</form>
+{% else %}
+<p style="color: green; text-align: center;">successful user created</p>
+{% endif %}
+{% endblock %}

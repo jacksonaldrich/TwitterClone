@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h2>search message</h2>
+{% endblock %}
+
+
+{% block content %}
+
+{% if default %}
+<h2>Search for a message</h2>
+<form action=/search_message method=POST>
+    <table>
+        <tr><td>search: </td><td><input class="textfield" type=text name=search size="25"></td></tr>
+    </table>
+    <input type=submit value='search'>
+</form>
+{% else %}
+<h2>messages that match your search:</h2>
+
+
+<table class = "search_messages">
+    <tr><th>sender (id)</th><th>message</th><th>posted at</th></tr>
+    {% for message in messages %}
+    <tr>
+        <td>{{message.username}}</td>
+        <td>{{message.text}}</td>
+        <td>{{message.created_at}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endif %}
+
+{% endblock %}
